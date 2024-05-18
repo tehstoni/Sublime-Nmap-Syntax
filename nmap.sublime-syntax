@@ -1,0 +1,86 @@
+%YAML 1.2
+---
+name: Nmap
+file_extensions:
+  - nmap
+scope: source.nmap
+
+contexts:
+  main:
+    # Comment lines
+    - match: ^#.*
+      scope: comment.line.number-sign.nmap
+
+    # Host information with IP addresses
+    - match: (Nmap scan report for )([^\s]+)\s\((\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})\)
+      captures:
+        1: entity.name.section.nmap
+        2: constant.other.hostname.nmap
+        3: constant.numeric.ip-address.nmap
+
+    # Host status
+    - match: (Host is up \()(.*?)(\))
+      captures:
+        1: keyword.other.nmap
+        2: constant.numeric.time.nmap
+        3: punctuation.definition.comment.nmap
+
+    # Port information
+    - match: ^(\d+)/(tcp|udp)\s+(open|closed|filtered)\s+([^\s]+)\s+(.*)$
+      captures:
+        1: constant.numeric.port.nmap
+        2: storage.type.nmap
+        3: keyword.other.state.nmap
+        4: storage.type.service.nmap
+        5: string.unquoted.version.nmap
+
+    # Service information
+    - match: ^([^\s]+)\s+(open|closed|filtered)\s+(.*)$
+      captures:
+        1: storage.type.service.nmap
+        2: keyword.other.state.nmap
+        3: string.unquoted.nmap
+
+    # IP addresses
+    - match: \b(\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})\b
+      scope: constant.numeric.ip-address.nmap
+
+    # Finished time
+    - match: (Nmap done at )(.*)
+      captures:
+        1: keyword.other.nmap
+        2: constant.numeric.time.nmap
+
+    # HTTP Responses
+    - match: (HTTP/\d+\.\d+ \d+ .*)
+      scope: keyword.control.http.nmap
+
+    # Headers
+    - match: ^([A-Za-z-]+:)(\s+.*)
+      captures:
+        1: entity.name.tag.http.nmap
+        2: string.unquoted.nmap
+
+    # HTML and XML content
+    - match: (<[^>]+>)
+      scope: string.unquoted.html.nmap
+
+    # SF lines
+    - match: ^SF.*.+$
+      scope: string.unquoted.sf-response.nmap
+
+    # Next Service Fingerprint header
+    - match: ^={14,}NEXT SERVICE FINGERPRINT \(SUBMIT INDIVIDUALLY\)={14,}$
+      scope: entity.name.section.next-service.nmap
+
+    # Generic lines with equals at the start and end
+    - match: ^=.*=$
+      scope: entity.name.tag.http.nmap
+
+    # HTTP header lines with pipe
+    - match: ^(\|\s+)([A-Za-z-]+)(:)(.*)$
+      captures:
+        1: punctuation.separator.pipe.nmap
+        2: entity.name.tag.header-name.nmap
+        3: punctuation.separator.colon.nmap
+        4: string.unquoted.header-value.nmap
