@@ -14,7 +14,7 @@ When its put in there, you should be able to open any .nmap file and have syntax
 
 Or if you're like me, open your namp file and manually select the syntax, either through 'Ctrl + P > Set Syntax: Nmap' or clicking the thing in the bottom right corner.
 
-<h3>If you click browse packages and nothing happens</h4>
+<h2>If you click browse packages and nothing happens</h2>
 <h4>Linux:</h5>
 The path is:
 /home/`whoami`/.config/sublime-text/Packages/User/
