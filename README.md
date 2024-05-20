@@ -19,8 +19,18 @@ Or if you're like me, open your namp file and manually select the syntax, either
 The path is:
 /home/`whoami`/.config/sublime-text/Packages/User/
 
+```bash
+#command to open path
+xdg-open /home/`whoami`/.config/sublime-text/Packages/User/
+```
+
 Or root:
 /root/.config/sublime-text/Packages/User
 
 <h4>Windows:</h4>
 C:\Users\<user>\AppData\Roaming\Sublime Text\Packages
+
+```powershell
+# powershell command to open path
+$appdata = $env:APPDATA; $fullpath = $appdata + "\Sublime Text\Packages\User"; start $fullpath
+```
