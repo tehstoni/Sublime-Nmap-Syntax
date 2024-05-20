@@ -28,7 +28,7 @@ Or root:
 /root/.config/sublime-text/Packages/User
 
 <h4>Windows:</h4>
-C:\\Users\\<user>\\AppData\\Roaming\\Sublime Text\\Packages
+C:\\Users\\user\\AppData\\Roaming\\Sublime Text\\Packages
 
 ```powershell
 # powershell command to open path
