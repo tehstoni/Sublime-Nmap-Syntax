@@ -18,8 +18,6 @@ Or if you're like me, open your nmap file and manually select the syntax, either
 <h4>Linux / Mac:</h5>
 The path is:
 /home/`whoami`/.config/sublime-text/Packages/User/
-or
-~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User
 
 ```bash
 #command to open path
@@ -28,6 +26,12 @@ xdg-open /home/`whoami`/.config/sublime-text/Packages/User/
 
 Or root:
 /root/.config/sublime-text/Packages/User
+
+For Mac:
+```bash
+open ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User
+```
+
 
 <h4>Windows:</h4>
 C:\Users\user\AppData\Roaming\Sublime Text\Packages
