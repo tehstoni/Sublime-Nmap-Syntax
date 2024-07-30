@@ -15,9 +15,11 @@ When its put in there, you should be able to open any .nmap file and have syntax
 Or if you're like me, open your nmap file and manually select the syntax, either through 'Ctrl + Shift + P > Set Syntax: Nmap' or clicking the thing in the bottom right corner.
 
 <h2>If you click browse packages and nothing happens</h2>
-<h4>Linux:</h5>
+<h4>Linux / Mac:</h5>
 The path is:
 /home/`whoami`/.config/sublime-text/Packages/User/
+or
+~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User
 
 ```bash
 #command to open path
@@ -34,3 +36,4 @@ C:\Users\user\AppData\Roaming\Sublime Text\Packages
 # powershell command to open path
 $appdata = $env:APPDATA; $fullpath = $appdata + "\Sublime Text\Packages\User"; start $fullpath
 ```
+
