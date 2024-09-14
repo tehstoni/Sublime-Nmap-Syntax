@@ -41,3 +41,5 @@ C:\Users\user\AppData\Roaming\Sublime Text\Packages
 $appdata = $env:APPDATA; $fullpath = $appdata + "\Sublime Text\Packages\User"; start $fullpath
 ```
 
+<h2>Demo Image</h2>
+<img src="https://raw.githubusercontent.com/tehstoni/Sublime-Nmap-Syntax/main/exampleimage.png">
